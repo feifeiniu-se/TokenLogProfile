@@ -1,0 +1,84 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cn.edu.nju.loggenerate.modelengine.logbeans;
+
+import cn.edu.nju.loggenerate.modelengine.flowbeans.Transition;
+import java.util.List;
+
+/**
+ *
+ * @author LiChuanyi
+ */
+public class PrePostLogBean {
+    
+    public List<Transition> pres;
+    public Transition current;
+    public List<Transition> posts;
+    
+    public PrePostLogBean(){
+        
+    }
+    
+    public PrePostLogBean(List<Transition> pre, Transition cur, List<Transition> post){
+        this.pres = pre;
+        this.current = cur;
+        this.posts = post;
+    }
+    
+    public boolean equals(PrePostLogBean pplb){
+        if(this.pres.containsAll(pplb.pres) && pplb.pres.containsAll(pres)){
+            if(this.current.getName().equals(pplb.current.getName())){
+                if(this.posts.containsAll(pplb.posts) && pplb.posts.containsAll(this.posts)){
+                    return true;
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+    }
+    
+    public void print(){
+        for(int i = 0; i < pres.size(); i ++){
+            System.out.print(pres.get(i).getName());
+            if(i < pres.size() - 1){
+                System.out.print(",");
+            }
+        }
+        System.out.print("|");
+        System.out.print(current.getName());
+        System.out.print("|");
+        for(int i = 0; i < posts.size(); i ++){
+            System.out.print(posts.get(i).getName());
+            if(i < posts.size() - 1){
+                System.out.print(",");
+            }
+        }
+    }
+    
+    public String saveToFile(){
+    	String pplbItem = "";
+        for(int i = 0; i < pres.size(); i ++){
+        	pplbItem = pplbItem + pres.get(i).getName();
+            if(i < pres.size() - 1){
+            	pplbItem = pplbItem + ",";
+            }
+        }
+        pplbItem = pplbItem + "|";
+        pplbItem = pplbItem + current.getName();
+        pplbItem = pplbItem + "|";
+        for(int i = 0; i < posts.size(); i ++){
+        	pplbItem = pplbItem + posts.get(i).getName();
+            if(i < posts.size() - 1){
+            	pplbItem = pplbItem + ",";
+            }
+        }
+        
+        return pplbItem;
+    }
+}

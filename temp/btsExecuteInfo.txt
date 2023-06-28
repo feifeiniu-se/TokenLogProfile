@@ -1,0 +1,55 @@
+the execute info as follows:
+
+the bts info of the first petri net object:
+the coverability tree info:
+node info��
+(0:[0,0,1]) (1:[0,1,0]) (2:[0,1,0]) (3:[0,1,0]) 
+(4:[0,1,0]) (5:[0,1,0]) (6:[0,1,0]) (7:[0,1,0]) 
+(8:[1,0,0]) (9:[1,0,0]) (10:[0,1,0]) 
+edge info��
+(0 1 wD)  (8 9 7SG)  (0 2 Aw)  (0 3 bS)  
+(0 4 2Z)  (0 5 d)  (0 6 OfM)  (0 7 Ha)  
+(0 8 6g)  (8 10 zre)  
+
+the cutOffDotPairSet info:
+(0,1) (8,9) (0,2) (0,3) (0,4) (0,5) (0,6) (0,7) (8,10) (0,8) (0,10) 
+
+the basic process segments:
+BasicIncreaseProcessSet:
+BasicDecreaseProcessSet:
+BasicUnchangingProcessSet:
+(7SG)  
+BasicTransmitProcess:
+BasicOpenProcessSet:
+(bS)  (6g)  (d)  (6g,zre)  (Aw)  (OfM)  (2Z)  (Ha)  (zre)  (wD)  
+
+
+
+the bts info of the second petri net object:
+the coverability tree info:
+node info��
+(0:[0,0,0,1]) (1:[0,0,1,0]) (2:[0,0,1,0]) (3:[0,0,1,0]) 
+(4:[0,0,1,0]) (5:[0,0,1,0]) (6:[0,1,0,0]) (7:[1,0,0,0]) 
+(10:[0,0,1,0]) (8:[1,0,0,0]) (11:[0,0,1,0]) (9:[1,0,0,0]) 
+(12:[0,0,1,0]) 
+edge info��
+(0 1 rHb)  (7 10 1)  (8 11 1)  (0 2 mcH)  
+(9 12 1)  (0 3 v)  (0 4 Y)  (0 5 z)  
+(0 6 U4)  (6 7 UMJ)  (6 8 2eO)  (6 9 A)  
+
+the cutOffDotPairSet info:
+(0,11) (0,1) (0,12) (0,2) (0,3) (0,4) (0,5) (0,10) 
+
+the basic process segments:
+BasicIncreaseProcessSet:
+BasicDecreaseProcessSet:
+BasicUnchangingProcessSet:
+BasicTransmitProcess:
+BasicOpenProcessSet:
+(mcH)  (U4,2eO,1)  (v)  (U4,A,1)  (Y)  (z)  (rHb)  (U4,UMJ,1)  
+
+
+
+
+the similar vector of these two petri net is :{0.05, 0.05, 0.0, 0.05, 0.0}
+the similarity coefficient of these two petri nets is: 0.15000000000000002

@@ -1,0 +1,1 @@
+java -Xms1024m -Xmx1024m -Djava.library.path=./lib  cn.edu.thss.iise.beehivez.client.BusinessProcessModelManager

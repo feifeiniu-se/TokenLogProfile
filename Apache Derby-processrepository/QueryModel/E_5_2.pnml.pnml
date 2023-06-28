@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<pnml>
+<net id="workflownet" type="http://www.informatik.hu-berlin.de/top/pnml/basicPNML.rng">
+    <place id="P0">
+        <graphics>
+            <position x="120.0" y="242.0" />
+            <dimension x="13" y="13" />
+        </graphics>
+        <name>
+            <text>P0</text>
+         </name>
+    </place>
+    <place id="P1">
+        <graphics>
+            <position x="332.0" y="243.0" />
+            <dimension x="13" y="13" />
+        </graphics>
+        <name>
+            <text>P1</text>
+         </name>
+    </place>
+    <place id="P2">
+        <graphics>
+            <position x="525.0" y="241.0" />
+            <dimension x="13" y="13" />
+        </graphics>
+        <name>
+            <text>P2</text>
+         </name>
+    </place>
+    <place id="P3">
+        <graphics>
+            <position x="721.0" y="240.0" />
+            <dimension x="13" y="13" />
+        </graphics>
+        <name>
+            <text>P3</text>
+         </name>
+    </place>
+    <place id="P4">
+        <graphics>
+            <position x="24.0" y="240.0" />
+            <dimension x="13" y="13" />
+        </graphics>
+        <name>
+            <text>P4</text>
+         </name>
+    </place>
+    <place id="P5">
+        <graphics>
+            <position x="838.0" y="238.0" />
+            <dimension x="13" y="13" />
+        </graphics>
+        <name>
+            <text>P5</text>
+         </name>
+    </place>
+	<transition id="A">
+        <graphics>
+            <position  x="225.0" y="166.0" />
+            <dimension x="20" y="17" />
+        </graphics>
+        <name>
+            <text>A</text>
+         </name>
+        <toolspecific tool="ProM" version="5.2">
+            <logevent>
+                <name>A</name>
+                <type>auto</type>
+            </logevent>
+        </toolspecific>
+    </transition>
+	<transition id="B">
+        <graphics>
+            <position  x="435.0" y="241.0" />
+            <dimension x="20" y="17" />
+        </graphics>
+        <name>
+            <text>B</text>
+         </name>
+        <toolspecific tool="ProM" version="5.2">
+            <logevent>
+                <name>B</name>
+                <type>auto</type>
+            </logevent>
+        </toolspecific>
+    </transition>
+	<transition id="C">
+        <graphics>
+            <position  x="615.0" y="165.0" />
+            <dimension x="20" y="17" />
+        </graphics>
+        <name>
+            <text>C</text>
+         </name>
+        <toolspecific tool="ProM" version="5.2">
+            <logevent>
+                <name>C</name>
+                <type>auto</type>
+            </logevent>
+        </toolspecific>
+    </transition>
+	<transition id="T9">
+        <graphics>
+            <position  x="617.0" y="297.0" />
+            <dimension x="20" y="17" />
+        </graphics>
+        <name>
+            <text>T9</text>
+         </name>
+        <toolspecific tool="ProM" version="5.2">
+            <logevent>
+                <name>T9</name>
+                <type>auto</type>
+            </logevent>
+        </toolspecific>
+    </transition>
+	<transition id="C1">
+        <graphics>
+            <position  x="614.0" y="209.0" />
+            <dimension x="20" y="17" />
+        </graphics>
+        <name>
+            <text>C1</text>
+         </name>
+        <toolspecific tool="ProM" version="5.2">
+            <logevent>
+                <name>C1</name>
+                <type>auto</type>
+            </logevent>
+        </toolspecific>
+    </transition>
+	<transition id="C2">
+        <graphics>
+            <position  x="615.0" y="256.0" />
+            <dimension x="20" y="17" />
+        </graphics>
+        <name>
+            <text>C2</text>
+         </name>
+        <toolspecific tool="ProM" version="5.2">
+            <logevent>
+                <name>C2</name>
+                <type>auto</type>
+            </logevent>
+        </toolspecific>
+    </transition>
+	<transition id="A1">
+        <graphics>
+            <position  x="225.0" y="210.0" />
+            <dimension x="20" y="17" />
+        </graphics>
+        <name>
+            <text>A1</text>
+         </name>
+        <toolspecific tool="ProM" version="5.2">
+            <logevent>
+                <name>A1</name>
+                <type>auto</type>
+            </logevent>
+        </toolspecific>
+    </transition>
+	<transition id="C3">
+        <graphics>
+            <position  x="613.0" y="344.0" />
+            <dimension x="20" y="17" />
+        </graphics>
+        <name>
+            <text>C3</text>
+         </name>
+        <toolspecific tool="ProM" version="5.2">
+            <logevent>
+                <name>C3</name>
+                <type>auto</type>
+            </logevent>
+        </toolspecific>
+    </transition>
+	<transition id="A2">
+        <graphics>
+            <position  x="225.0" y="255.0" />
+            <dimension x="20" y="17" />
+        </graphics>
+        <name>
+            <text>A2</text>
+         </name>
+        <toolspecific tool="ProM" version="5.2">
+            <logevent>
+                <name>A2</name>
+                <type>auto</type>
+            </logevent>
+        </toolspecific>
+    </transition>
+	<transition id="A3">
+        <graphics>
+            <position  x="227.0" y="301.0" />
+            <dimension x="20" y="17" />
+        </graphics>
+        <name>
+            <text>A3</text>
+         </name>
+        <toolspecific tool="ProM" version="5.2">
+            <logevent>
+                <name>A3</name>
+                <type>auto</type>
+            </logevent>
+        </toolspecific>
+    </transition>
+	<transition id="A4">
+        <graphics>
+            <position  x="228.0" y="346.0" />
+            <dimension x="20" y="17" />
+        </graphics>
+        <name>
+            <text>A4</text>
+         </name>
+        <toolspecific tool="ProM" version="5.2">
+            <logevent>
+                <name>A4</name>
+                <type>auto</type>
+            </logevent>
+        </toolspecific>
+    </transition>
+	<transition id="T0">
+        <graphics>
+            <position  x="83.0" y="240.0" />
+            <dimension x="20" y="17" />
+        </graphics>
+        <name>
+            <text>T0</text>
+         </name>
+        <toolspecific tool="ProM" version="5.2">
+            <logevent>
+                <name>T0</name>
+                <type>auto</type>
+            </logevent>
+        </toolspecific>
+    </transition>
+	<transition id="T1">
+        <graphics>
+            <position  x="793.0" y="240.0" />
+            <dimension x="20" y="17" />
+        </graphics>
+        <name>
+            <text>T1</text>
+         </name>
+        <toolspecific tool="ProM" version="5.2">
+            <logevent>
+                <name>T1</name>
+                <type>auto</type>
+            </logevent>
+        </toolspecific>
+    </transition>
+    <arc id="T4 TO P1" source="A4" target="P1">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="238.0" y="361.0" />
+                <end x="238.0" y="361.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="T10 TO P3" source="C3" target="P3">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="623.0" y="359.0" />
+                <end x="623.0" y="359.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="T5 TO P2" source="B" target="P2">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="445.0" y="256.0" />
+                <end x="445.0" y="256.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="T9 TO P3" source="T9" target="P3">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="627.0" y="312.0" />
+                <end x="627.0" y="312.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="T0 TO P0" source="T0" target="P0">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="93.0" y="255.0" />
+                <end x="93.0" y="255.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="T0 TO P1" source="A" target="P1">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="235.0" y="181.0" />
+                <end x="235.0" y="181.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="T1 TO P1" source="A1" target="P1">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="235.0" y="225.0" />
+                <end x="235.0" y="225.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="T8 TO P3" source="C2" target="P3">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="625.0" y="271.0" />
+                <end x="625.0" y="271.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="T7 TO P3" source="C1" target="P3">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="624.0" y="224.0" />
+                <end x="624.0" y="224.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="T1 TO P5" source="T1" target="P5">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="803.0" y="255.0" />
+                <end x="803.0" y="255.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="T6 TO P3" source="C" target="P3">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="625.0" y="180.0" />
+                <end x="625.0" y="180.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="T3 TO P1" source="A3" target="P1">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="237.0" y="316.0" />
+                <end x="237.0" y="316.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="T2 TO P1" source="A2" target="P1">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="235.0" y="270.0" />
+                <end x="235.0" y="270.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="P4 TO T0" source="P4" target="T0">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="54.0" y="255.0" />
+                <end x="54.0" y="255.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="P2 TO T10" source="P2" target="C3">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="549.0" y="268.0" />
+                <end x="549.0" y="268.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="P0 TO T0" source="P0" target="A">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="147.0" y="248.0" />
+                <end x="147.0" y="248.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="P1 TO T5" source="P1" target="B">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="362.0" y="258.0" />
+                <end x="362.0" y="258.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="P0 TO T1" source="P0" target="A1">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="149.0" y="252.0" />
+                <end x="149.0" y="252.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="P0 TO T2" source="P0" target="A2">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="150.0" y="259.0" />
+                <end x="150.0" y="259.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="P0 TO T3" source="P0" target="A3">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="148.0" y="265.0" />
+                <end x="148.0" y="265.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="P0 TO T4" source="P0" target="A4">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="145.0" y="268.0" />
+                <end x="145.0" y="268.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="P2 TO T9" source="P2" target="T9">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="552.0" y="264.0" />
+                <end x="552.0" y="264.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="P2 TO T6" source="P2" target="C">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="551.0" y="246.0" />
+                <end x="551.0" y="246.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="P2 TO T7" source="P2" target="C1">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="554.0" y="250.0" />
+                <end x="554.0" y="250.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="P3 TO T1" source="P3" target="T1">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="751.0" y="255.0" />
+                <end x="751.0" y="255.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+    <arc id="P2 TO T8" source="P2" target="C2">
+        <toolspecific tool="ProM" version="5.2">
+            <spline>
+                <point x="555.0" y="259.0" />
+                <end x="555.0" y="259.0" />
+            </spline>
+        </toolspecific>
+    </arc>
+</net>
+</pnml>

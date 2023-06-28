@@ -1,0 +1,41 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cn.edu.nju.software.lcy.enginebeans;
+
+import cn.edu.nju.software.lcy.flowbeans.Token;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ *
+ * @author LiChuanyi
+ */
+public class OutTimeTokens {
+    
+    private static List<Token> outTimeTokenList;
+    
+    public static void initiallize(){
+        outTimeTokenList = new ArrayList<Token>();
+    }
+    
+    public static void addToken(Token t){
+        outTimeTokenList.add(t);
+    }
+    
+    public static void printALL(){
+        for(Token tmp : outTimeTokenList){
+            int id = tmp.getTokenID();
+            String producer = tmp.getProducer() >= 0 ? TransitionList.getByID(tmp.getProducer()).getName() : "I";
+            String consumer = tmp.getConsumer() >= 0 ? TransitionList.getByID(tmp.getConsumer()).getName() : "O";
+            System.out.println(tmp.getTokenID() + "," + producer 
+                    + "," + tmp.getProduceTime() + "," + consumer 
+                    + "," +tmp.getConsumeTime());
+        }
+    }
+    
+    public static List<Token> getAll(){
+        return outTimeTokenList;
+    }
+}

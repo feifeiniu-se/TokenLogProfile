@@ -1,0 +1,8 @@
+P0|a|P1,P5
+P1|b|P2,P10
+P2|c|P3,P11
+P3|d|P4
+P5|e|P6
+P6,P10|f|P7
+P7,P11|g|P8
+P4,P8|h|P9

@@ -1,0 +1,12 @@
+|P0|a
+a|P1|b
+b|P2|c
+c|P3|d
+d|P4|h
+a|P5|e
+e|P6|f
+f|P7|g
+g|P8|h
+h|P9|
+b|P10|f
+c|P11|g

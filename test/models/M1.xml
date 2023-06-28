@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+<net id="workflownet" type="http://www.informatik.hu-berlin.de/top/pnml/basicPNML.rng">
+
+	<place id="P0">
+		<graphics>
+			<position x="45.0" y="105.0"/>
+		</graphics>
+		<name>
+			<text>P0</text>
+		</name>
+	</place>
+	<place id="P1">
+		<graphics>
+			<position x="165.0" y="105.0"/>
+		</graphics>
+		<name>
+			<text>P1</text>
+		</name>
+	</place>
+	<place id="P2">
+		<graphics>
+			<position x="285.0" y="105.0"/>
+		</graphics>
+		<name>
+			<text>P2</text>
+		</name>
+	</place>
+	<place id="P4">
+		<graphics>
+			<position x="405.0" y="105.0"/>
+		</graphics>
+		<name>
+			<text>P4</text>
+		</name>
+	</place>
+	<transition id="A">
+		<graphics>
+			<position x="105.0" y="105.0"/>
+		</graphics>
+		<name>
+			<text>A</text>
+		</name>
+	</transition>
+	<transition id="B">
+		<graphics>
+			<position x="225.0" y="105.0"/>
+		</graphics>
+		<name>
+		<text>B</text>
+		</name>
+	</transition>
+	<transition id="C">
+		<graphics>
+			<position x="345.0" y="105.0"/>
+		</graphics>
+		<name>
+			<text>C</text>
+		</name>
+	</transition>
+	<arc id="A to P1" source="A" target="P1">
+	<graphics/>
+	<inscription>
+	<value>Default,1</value>
+	<graphics/>
+	</inscription>
+	<tagged>
+	<value>false</value>
+	</tagged>
+	<arcpath id="000" x="121" y="117" curvePoint="false"/>
+	<arcpath id="001" x="162" y="117" curvePoint="false"/>
+	<type value="normal"/>
+	</arc>
+	<arc id="B to P2" source="B" target="P2">
+	<graphics/>
+	<inscription>
+	<value>Default,1</value>
+	<graphics/>
+	</inscription>
+	<tagged>
+	<value>false</value>
+	</tagged>
+	<arcpath id="000" x="241" y="117" curvePoint="false"/>
+	<arcpath id="001" x="282" y="117" curvePoint="false"/>
+	<type value="normal"/>
+	</arc>
+	<arc id="C to P3" source="C" target="P4">
+	<graphics/>
+	<inscription>
+	<value>Default,1</value>
+	<graphics/>
+	</inscription>
+	<tagged>
+	<value>false</value>
+	</tagged>
+	<arcpath id="000" x="361" y="117" curvePoint="false"/>
+	<arcpath id="001" x="402" y="117" curvePoint="false"/>
+	<type value="normal"/>
+	</arc>
+	<arc id="P0 to A" source="P0" target="A">
+	<graphics/>
+	<inscription>
+	<value>Default,1</value>
+	<graphics/>
+	</inscription>
+	<tagged>
+	<value>false</value>
+	</tagged>
+	<arcpath id="000" x="71" y="117" curvePoint="false"/>
+	<arcpath id="001" x="111" y="117" curvePoint="false"/>
+	<type value="normal"/>
+	</arc>
+	<arc id="P1 to B" source="P1" target="B">
+	<graphics/>
+	<inscription>
+	<value>Default,1</value>
+	<graphics/>
+	</inscription>
+	<tagged>
+	<value>false</value>
+	</tagged>
+	<arcpath id="000" x="191" y="117" curvePoint="false"/>
+	<arcpath id="001" x="231" y="117" curvePoint="false"/>
+	<type value="normal"/>
+	</arc>
+	<arc id="P2 to C" source="P2" target="C">
+	<graphics/>
+	<inscription>
+	<value>Default,1</value>
+	<graphics/>
+	</inscription>
+	<tagged>
+	<value>false</value>
+	</tagged>
+	<arcpath id="000" x="311" y="117" curvePoint="false"/>
+	<arcpath id="001" x="351" y="117" curvePoint="false"/>
+	<type value="normal"/>
+	</arc>
+	</net>
+	</pnml>

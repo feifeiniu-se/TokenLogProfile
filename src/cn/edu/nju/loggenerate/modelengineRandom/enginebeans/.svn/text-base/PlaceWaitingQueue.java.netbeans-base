@@ -1,0 +1,70 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cn.edu.nju.software.lcy.enginebeans;
+
+import cn.edu.nju.software.lcy.flowbeans.Token;
+import cn.edu.nju.software.lcy.flowbeans.Transition;
+import java.util.LinkedList;
+import java.util.List;
+
+/**
+ *
+ * @author LiChuanyi
+ */
+public class PlaceWaitingQueue {
+    
+    private static LinkedList<Integer> placeQueue;
+    
+    public static void initiallize(){
+        placeQueue = new LinkedList<Integer>();
+    }
+    
+    public static void addPlaceToQueue(int placeID){
+        placeQueue.offer(placeID);
+    }
+    
+    public static Integer getHead(){
+        return placeQueue.peek();
+    }
+    
+    public static int removeHead(){
+        return placeQueue.poll();
+    }
+    
+    public static boolean removeOthersFromQueue(int currentPlaceID, Transition transition){
+        List<Integer> placeID = transition.getInputs();
+        
+        for(Integer placeIDTmp : placeID){
+            if(placeIDTmp != currentPlaceID){
+                placeQueue.remove(placeIDTmp);
+            }
+        }
+        
+        return true;
+    }
+    
+    public static void addPlaceToQueueHead(int placeID){
+        placeQueue.add(0, placeID);
+    }
+    
+    public static boolean hasOneElement(){
+        if(placeQueue.size() == 1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    public static void removeAllLast(){
+        for(Integer id : placeQueue){
+            if(PlaceList.getByID(id).isIsLast()){
+                placeQueue.remove(id);
+                Token consumedOne = PlaceList.getByID(id).consumeOne();
+                OutTimeTokens.addToken(consumedOne);
+            }
+        }
+    }
+
+}

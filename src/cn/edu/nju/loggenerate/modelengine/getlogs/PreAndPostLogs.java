@@ -1,0 +1,127 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cn.edu.nju.loggenerate.modelengine.getlogs;
+
+import cn.edu.nju.loggenerate.modelengine.enginebeans.OutTimeTokens;
+import cn.edu.nju.loggenerate.modelengine.enginebeans.TransitionList;
+import cn.edu.nju.loggenerate.modelengine.flowbeans.Token;
+import cn.edu.nju.loggenerate.modelengine.flowbeans.Transition;
+import cn.edu.nju.loggenerate.modelengine.logbeans.PrePostLogBean;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ *
+ * @author lichuanyi
+ */
+public class PreAndPostLogs {
+
+	public static String getLog(int caseNum) {
+
+		OutTimeTokens.setUnhandles();
+
+		String logString = "";
+
+		List<PrePostLogBean> pplbList = new ArrayList<PrePostLogBean>();
+		for (int caseID = 1; caseID <= caseNum; caseID++) {
+			if(!OutTimeTokens.hasCase(caseID)){
+				continue;
+			}
+			for (Transition transitionTmp : TransitionList.getTransitions()) {
+				// get tpm pres and posts
+				List<Token> pre_tokens = new ArrayList<Token>();
+				List<Token> post_tokens = new ArrayList<Token>();
+				for (Token tokenTmp : OutTimeTokens.getByCaseID(caseID)) {
+					if (tokenTmp.getConsumer() == transitionTmp
+							.getTransitionID()) {
+						pre_tokens.add(tokenTmp);
+					}
+					if (tokenTmp.getProducer() == transitionTmp
+							.getTransitionID()) {
+						post_tokens.add(tokenTmp);
+					}
+				}
+				// handle all pres and posts and adding output into result list
+				List<ArrayList<Transition>> preListList = new ArrayList<ArrayList<Transition>>();
+				List<Integer> preListCT = new ArrayList<Integer>();
+				for (int i = 0; i < pre_tokens.size(); i++) {
+					if (!pre_tokens.get(i).handled) {
+						ArrayList<Transition> preList = new ArrayList<Transition>();
+						preList.add(TransitionList.getByID(pre_tokens.get(i)
+								.getProducer()));
+						for (int j = i + 1; j < pre_tokens.size(); j++) {
+							if (!pre_tokens.get(j).handled) {
+								if (pre_tokens.get(j).getConsumeTime() == pre_tokens
+										.get(i).getConsumeTime()) {
+									preList.add(TransitionList
+											.getByID(pre_tokens.get(j)
+													.getProducer()));
+									pre_tokens.get(j).handled = true;
+								}
+							}
+						}
+						preListList.add(preList);
+						preListCT.add(pre_tokens.get(i).getConsumeTime());
+					}
+				}
+				List<ArrayList<Transition>> postListList = new ArrayList<ArrayList<Transition>>();
+				List<Integer> postListCT = new ArrayList<Integer>();
+				for (int i = 0; i < post_tokens.size(); i++) {
+					if (!post_tokens.get(i).handled) {
+						ArrayList<Transition> postList = new ArrayList<Transition>();
+						postList.add(TransitionList.getByID(post_tokens.get(i)
+								.getConsumer()));
+						for (int j = i + 1; j < post_tokens.size(); j++) {
+							if (!post_tokens.get(j).handled) {
+								if (post_tokens.get(j).getProduceTime() == post_tokens
+										.get(i).getProduceTime()) {
+									postList.add(TransitionList
+											.getByID(post_tokens.get(j)
+													.getConsumer()));
+									post_tokens.get(j).handled = true;
+								}
+							}
+						}
+						postListList.add(postList);
+						postListCT.add(post_tokens.get(i).getProduceTime());
+					}
+				}
+
+				for (int i = 0; i < pre_tokens.size(); i++) {
+					pre_tokens.get(i).handled = false;
+				}
+				for (int i = 0; i < post_tokens.size(); i++) {
+					post_tokens.get(i).handled = false;
+				}
+
+				for (int i = 0; i < preListList.size(); i++) {
+					for (int j = 0; j < postListList.size(); j++) {
+						if (preListCT.get(i) == postListCT.get(j)) {
+							PrePostLogBean pplb = new PrePostLogBean(
+									preListList.get(i), transitionTmp,
+									postListList.get(j));
+							boolean added = false;
+							for (PrePostLogBean pplbTmp : pplbList) {
+								if (pplbTmp.equals(pplb)) {
+									added = true;
+									break;
+								}
+							}
+							if (!added) {
+								pplbList.add(pplb);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		for (PrePostLogBean pplb : pplbList) {
+			logString = logString + pplb.saveToFile() + "\r\n";
+		}
+
+		return logString;
+	}
+}

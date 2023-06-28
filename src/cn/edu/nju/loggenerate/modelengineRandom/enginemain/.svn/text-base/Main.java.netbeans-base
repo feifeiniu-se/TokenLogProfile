@@ -1,0 +1,80 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cn.edu.nju.software.lcy.enginemain;
+
+import cn.edu.nju.software.lcy.enginebeans.OutTimeTokens;
+import cn.edu.nju.software.lcy.enginebeans.PlaceList;
+import cn.edu.nju.software.lcy.enginebeans.PlaceWaitingQueue;
+import cn.edu.nju.software.lcy.enginebeans.TransitionList;
+import cn.edu.nju.software.lcy.flowbeans.Place;
+import cn.edu.nju.software.lcy.flowbeans.Token;
+import cn.edu.nju.software.lcy.flowbeans.Transition;
+import cn.edu.nju.software.lcy.flowmaker.WorkFlowMaker;
+import cn.edu.nju.software.lcy.getlogs.PreAndPostLogs;
+import java.util.Random;
+
+/**
+ *
+ * @author LiChuanyi
+ */
+public class Main {
+
+    public static void main(String[] args) {
+        EngineInstance.initiallizeEngine();
+
+        WorkFlowMaker.initiallize();
+        WorkFlowMaker.readPlaces("G:\\current projects\\WorkFlowEngineLCY\\src\\files/places.txt");
+        WorkFlowMaker.readTransitions("G:\\current projects\\WorkFlowEngineLCY\\src\\files/transitions.txt");
+        WorkFlowMaker.constructPlaces();
+        WorkFlowMaker.constructTransitions();
+
+        //testLists();
+
+        EngineInstance.initiallizeStartPlace();
+
+        EngineInstance.startEngine();
+        OutTimeTokens.printALL();
+        
+        PreAndPostLogs.getLog();
+    }
+
+    public static void testLists() {
+        System.out.println("Places Infomation:");
+        for (Place p : PlaceList.getPlaces()) {
+            for (Integer input : p.getInputs()) {
+                System.out.print(TransitionList.getByID(input).getName() + ",");
+            }
+            System.out.print("|");
+            System.out.print(p.getName());
+            System.out.print("|");
+            for (Integer output : p.getOutputs()) {
+                System.out.print(TransitionList.getByID(output).getName() + ",");
+            }
+            System.out.println();
+        }
+        System.out.println("Transition Information:");
+        for (Transition t : TransitionList.getTransitions()) {
+            for (Integer input : t.getInputs()) {
+                System.out.print(PlaceList.getByID(input).getName() + ",");
+            }
+            System.out.print("|");
+            System.out.print(t.getName());
+            System.out.print("|");
+            for (Integer output : t.getOutputs()) {
+                System.out.print(PlaceList.getByID(output).getName() + ",");
+            }
+            System.out.println();
+        }
+    }
+    
+//    public static void main(String[] args) {
+//        Random r = new Random();
+//        
+//        for(int i = 0; i < 10; i ++){
+//            
+//            System.out.println(r.nextInt(2));
+//        }
+//    }
+}

@@ -1,0 +1,68 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cn.edu.nju.software.lcy.enginebeans;
+
+import cn.edu.nju.software.lcy.flowbeans.Transition;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ *
+ * @author LiChuanyi
+ */
+public class TransitionList {
+    
+    private static List<Transition> transitionList;
+    private static int lastID;
+    
+    public static void initiallize(){
+        transitionList = new ArrayList<Transition>();
+        lastID = 0;
+    }
+    
+    public static boolean addTransition(Transition t){
+        for(Transition ttmp : transitionList){
+            if(ttmp.getName().equals(t.getName())){
+                return false;
+            }
+        }
+        t.setTransitionID(lastID);
+        transitionList.add(t);
+        lastID ++;
+        return true;
+    }
+    
+    public static Transition getByID(int id){
+        if(id == -2){
+            return new Transition("I");
+        }
+        if(id == -1){
+            return new Transition("O");
+        }
+        return transitionList.get(id);
+    }
+    
+    public static int getIDByName(String name){
+        for(int i = 0; i < transitionList.size(); i ++){
+            if(transitionList.get(i).getName().equals(name)){
+                return i;
+            }
+        }
+        return -1;
+    }
+    
+    public static List<Transition> getTransitions(){
+        return transitionList;
+    }
+    
+    public static boolean hasUnExecuted(){
+        for(Transition t : transitionList){
+            if(!t.isExecuted()){
+                return true;
+            }
+        }
+        return false;
+    }
+}

@@ -1,0 +1,30 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cn.edu.nju.software.lcy.getlogs;
+
+import cn.edu.nju.software.lcy.enginebeans.OutTimeTokens;
+import cn.edu.nju.software.lcy.enginebeans.TransitionList;
+import cn.edu.nju.software.lcy.flowbeans.Token;
+import cn.edu.nju.software.lcy.flowbeans.Transition;
+
+/**
+ *
+ * @author LiChuanyi
+ */
+public class PostLogs {
+    
+    public static void getLog(){
+        
+        for(Transition transitionTmp : TransitionList.getTransitions()){
+            //get tpm posts
+            for(Token tokenTmp : OutTimeTokens.getAll()){
+                
+            }
+            //handle all posts and adding output into result list
+        }
+        
+    }
+    
+}

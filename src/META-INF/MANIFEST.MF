@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Class-Path: jahmm-0.6.1.jar jung-1.7.6.jar l2fprod-common-all.jar post
+ gresql-8.4-701.jdbc4.jar testng-5.7-jdk15.jar jfreechart-1.0.5.jar co
+ mmons-logging-1.0.4.jar jdom.jar JRI.jar GantzGraf-0.9.jar xmlunit1.0
+ .jar commons-math-1.1.jar jlfgr-1_0.jar wsmo4j-0.6.1.jar mysql-connec
+ tor-java-5.1.13-bin.jar JRclient.jar junit-4.1.jar recommendations.ja
+ r weka.jar lpsolve55j.jar jwnl.jar kaon2.jar YAWL_2.1_Standalone.jar 
+ AlphaPPProcessMiner.jar antlr-2.7.6.jar wsml2reasoner-noncom-v0_5.jar
+  powerswing-0.3.jar slickerbox0.5.jar htmlparser.jar wsmo-api-0.6.1.j
+ ar colt.jar MXMLib.jar TsinghuaAlphaProcessMiner.jar holub.jar java-c
+ up-11a-runtime.jar commons-logging.jar JWordNetSim.jar commons-collec
+ tions-3.2.jar att.jar jpowergraph-0.2-swing.jar parsemis-2008-12-01.j
+ ar derby.jar prefuse.jar WSML-grammar-20070417.jar netcdf-4.2.jar mat
+ hCollection.jar kxml2.jar jgraph.jar java_cup.jar TGGraphLayout.jar j
+ powergraph-0.2-common.jar jcommon-1.0.6.jar jgraphlayout.jar
+Main-Class: cn.edu.thss.iise.beehivez.client.BusinessProcessModelManag
+ er
+
